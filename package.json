@@ -1,0 +1,26 @@
+{
+  "name": "mock-llm-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A configurable mock LLM server with OpenAI-compatible API, admin console and MCP model configuration.",
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev -w server\" \"npm run dev -w web\"",
+    "dev:server": "npm run dev -w server",
+    "dev:web": "npm run dev -w web",
+    "build": "npm run build -w web",
+    "start": "npm run start -w server",
+    "vocab:build": "node server/scripts/build-vocab.mjs",
+    "smoke": "node server/scripts/smoke.mjs",
+    "loadtest": "node server/scripts/loadtest.mjs"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

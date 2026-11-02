@@ -1,0 +1,21 @@
+{
+  "name": "@mock-llm/server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js",
+    "build:vocab": "node scripts/build-vocab.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "loadtest": "node scripts/loadtest.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "ioredis": "^5.4.2",
+    "zod": "^3.25.76"
+  }
+}
